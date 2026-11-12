@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chhath Geet Deluxe · Playlist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0a07; --surface:#17120c; --surface2:#211910; --text:#f4ead8; --muted:#a8977c;
+  --gold:#d4a851; --gold2:#f1d38a; --line:rgba(212,168,81,.25); --ink:#1a1206;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#faf5ea; --surface:#fffdf7; --surface2:#f3ead7; --text:#2a1e0f; --muted:#7a6a50;
+    --gold:#a67a1e; --gold2:#7d5a10; --line:rgba(166,122,30,.3); color-scheme:light;
+  }
+}
+:root[data-theme="light"]{--bg:#faf5ea;--surface:#fffdf7;--surface2:#f3ead7;--text:#2a1e0f;--muted:#7a6a50;--gold:#a67a1e;--gold2:#7d5a10;--line:rgba(166,122,30,.3);color-scheme:light}
+:root[data-theme="dark"]{--bg:#0d0a07;--surface:#17120c;--surface2:#211910;--text:#f4ead8;--muted:#a8977c;--gold:#d4a851;--gold2:#f1d38a;--line:rgba(212,168,81,.25);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,sans-serif;font-weight:300;line-height:1.6}
+button{font:inherit;color:inherit}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
+.logo{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.theme{background:none;border:1px solid var(--line);color:var(--gold);border-radius:99px;padding:6px 14px;cursor:pointer;font-size:.8rem}
+.hero{text-align:center;padding:64px 0 44px}
+.eyebrow{letter-spacing:.35em;font-size:.7rem;text-transform:uppercase;color:var(--gold)}
+h1{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:clamp(2.2rem,8vw,4rem);line-height:1.1;margin:16px 0}
+h1 span{color:var(--gold2);font-style:italic}
+.hero p{color:var(--muted);max-width:480px;margin:0 auto 28px}
+.divider{display:flex;align-items:center;gap:14px;justify-content:center;color:var(--gold);margin:0 auto 28px;max-width:260px}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);border:0;padding:13px 30px;border-radius:2px;font:500 .8rem 'Poppins',sans-serif;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.btn.ghost{background:none;border:1px solid var(--gold);color:var(--gold);margin-left:8px}
+.controls{display:flex;flex-direction:column;gap:14px;margin-bottom:22px}
+input[type=search]{width:100%;background:var(--surface);border:1px solid var(--line);color:var(--text);padding:13px 16px;font:inherit;border-radius:2px;outline:none}
+input[type=search]:focus{border-color:var(--gold)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;align-items:center}
+.chip{flex:none;background:transparent;border:1px solid var(--line);color:var(--muted);padding:7px 16px;border-radius:99px;cursor:pointer;font-size:.8rem}
+.chip.on{background:var(--gold);border-color:var(--gold);color:var(--ink);font-weight:500}
+.chip.add{border-style:dashed;border-color:var(--gold);color:var(--gold);margin-left:auto}
+.chip.add input{display:none}
+h2{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:1.5rem;margin-bottom:6px}
+.count{color:var(--muted);font-size:.8rem;margin-bottom:14px}
+.list{display:grid;gap:10px;margin-bottom:60px}
+.track{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);padding:14px 16px;border-radius:3px;transition:.2s}
+.track:hover,.track.on{border-color:var(--gold)}
+.track.on{background:var(--surface2)}
+.track.bad{opacity:.65}
+.num{font-family:'Playfair Display',Georgia,serif;color:var(--gold);font-size:1.2rem}
+.t{font-weight:500}
+.meta{font-size:.78rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:1px 8px;border-radius:99px;margin-top:6px}
+.acts{display:flex;gap:8px;align-items:center}
+.ic{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface2);color:var(--gold);display:grid;place-items:center;cursor:pointer;font-size:1rem}
+.ic.play{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.ic.fav.on{color:#e0584f}
+.empty{text-align:center;color:var(--muted);padding:40px 0}
+.box{background:var(--surface);border:1px solid var(--line);padding:28px 22px;margin-bottom:60px}
+.box.center{text-align:center}
+.box p{color:var(--muted);font-size:.9rem}
+.steps,.days{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:18px 0 22px;text-align:left}
+.step{background:var(--surface2);border:1px solid var(--line);padding:12px 14px;border-radius:3px;font-size:.85rem}
+.step b,.day b{display:block;color:var(--gold);font-family:'Playfair Display',Georgia,serif;font-weight:500}
+.day{border-top:2px solid var(--gold);padding-top:10px}
+.day b{color:var(--text)}
+.day small{color:var(--muted)}
+details summary{cursor:pointer;font-family:'Playfair Display',Georgia,serif;font-size:1.2rem}
+details ol{padding-left:20px;color:var(--muted);font-size:.88rem;display:grid;gap:6px;margin-top:12px}
+details code{background:var(--surface2);color:var(--gold);padding:1px 6px;border-radius:3px;font-size:.82rem}
+footer{border-top:1px solid var(--line);text-align:center;padding:30px 0 40px;color:var(--muted);font-size:.8rem}
+footer b{color:var(--gold);font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:1rem;display:block;margin-bottom:4px}
+.player{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--gold);padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));display:none;z-index:20}
+.player.show{display:block}
+.pin{display:flex;justify-content:space-between;align-items:center;gap:10px;max-width:900px;margin:0 auto 6px}
+.pctl{display:flex;gap:8px;flex:none}
+.seekrow{display:flex;align-items:center;gap:10px;max-width:900px;margin:0 auto;font-size:.72rem;color:var(--muted)}
+.seekrow input{flex:1;accent-color:var(--gold)}
+.perr{max-width:900px;margin:6px auto 0;font-size:.78rem;color:#e0584f}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div class="logo">Chhath Geet Deluxe</div>
+    <button class="theme" id="theme">☀ / ☾</button>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">Curated Devotional Collection</div>
+    <h1>Songs for <span>Chhathi Maiya</span> &amp; Suruj Dev</h1>
+    <div class="divider">✦</div>
+    <p>A refined playlist of Chhath Puja geet, from Nahay Khay to the morning Arghya. Search, save favourites, and listen right here.</p>
+    <a class="btn" href="#playlist">Explore Playlist</a><a class="btn ghost" href="#kosi">Kosi Geet</a>
+  </header>
+
+  <section id="playlist">
+    <h2>The Playlist</h2>
+    <div class="count" id="count"></div>
+    <div class="controls">
+      <input type="search" id="q" placeholder="Search a song or singer…">
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="list" id="list"></div>
+  </section>
+
+  <section class="box center" id="kosi">
+    <div class="eyebrow">Sandhya Arghya Evening</div>
+    <h2 style="margin-top:6px">Kosi Geet</h2>
+    <p>Kosi Bharai is a thanksgiving ritual for a wish granted by Chhathi Maiya. Women gather around a canopy of sugarcane, light diyas, and sing Kosi geet together.</p>
+    <div class="steps">
+      <div class="step"><b>Sugarcane canopy</b>5 or 7 stalks tied together overhead</div>
+      <div class="step"><b>Earthen kosi</b>Clay pot and diyas filled with fruits and thekua</div>
+      <div class="step"><b>Songs &amp; thanks</b>Folk geet sung around the kosi in the evening</div>
+    </div>
+    <div class="list" id="kosiList" style="margin-bottom:0;text-align:left"></div>
+  </section>
+
+  <section class="box center">
+    <h2>The Four Days</h2>
+    <p>Songs are grouped by the rituals they accompany.</p>
+    <div class="days">
+      <div class="day"><b>Nahay Khay</b><small>Holy bath &amp; pure meal</small></div>
+      <div class="day"><b>Kharna</b><small>Evening prasad after fast</small></div>
+      <div class="day"><b>Sandhya Arghya</b><small>Offering to the setting sun</small></div>
+      <div class="day"><b>Usha Arghya</b><small>Offering to the rising sun</small></div>
+    </div>
+  </section>
+
+  <footer><b>Chhath Geet Deluxe</b>Jai Chhathi Maiya 🌅</footer>
+</div>
+
+<div class="player" id="player">
+  <div class="pin">
+    <div><div class="t" id="pTitle"></div><div class="meta" id="pSub"></div></div>
+    <div class="pctl"> 
+      <button class="ic" id="prev" aria-label="Previous">⏮</button>
+      <button class="ic play" id="pp" aria-label="Play or pause">▶</button>
+      <button class="ic" id="next" aria-label="Next">⏭</button>
+      <button class="ic" id="pClose" aria-label="Close">✕</button>
+    </div>
+  </div>
+  <div class="seekrow"><span id="cur">0:00</span><input type="range" id="seek" min="0" max="100" value="0" step="0.1" aria-label="Seek"><span id="dur">0:00</span></div>
+  <div class="perr" id="pErr"></div>
+</div>
+<audio id="au" preload="metadata"></audio>
+
+<script>
+// Edit this list. f = exact file name inside the "songs" folder.
+const SONGS = [
+  {t:"Kelwa Ke Paat Par",a:"Sharda Sinha",f:"Kelwa Ke Paat Per.mp3",c:"Sandhya Arghya"},
+  {t:"Pahile Pahil Hum Karni Chhathi Maiya",a:"Sharda Sinha",f:"Pahile Pahil Hum Karni Chhathi Maiya.mp3",c:"Nahay Khay"},
+  {t:"Uga Ho Suruj Dev",a:"PAWAN SINGH",f:"Uga Ho Suraj Dev.mp3",c:"Usha Arghya"},
+  {t:"Kaanch Hi Bans Ke Bahangiya",a:"ANURADHA PAUDWAL",f:"Kaanch Hi Bans Ke Bahangiya.mp3",c:"Kharna"},
+  {t:"Hey Chhathi Maiya",a:"SHARDA SINHA",f:"Hey Chhathi Maiya.mp3",c:"Nahay Khay"},
+  {t:"Marbo Re Suganwa Dhanush Se",a:"ANURADHA PAUDWAL",f:"Marbo Re Suganwa Dhanush Se.mp3",c:"Sandhya Arghya"},
+  {t:"Ho Dinanath",a:"SHARDA SINHA",f:"Ho Dinanath.mp3",c:"Usha Arghya"},
+  {t:"Kopi Kopi Boleli",a:"DEVI",f:"Kopi Kopi Boleli.mp3",c:"Kharna"},
+  {t:"Jai Chhathi Maiya",a:"PAWAN SINGH AND SONU NIGAM",f:"Jai Chhathi Maiya.mp3",c:"Sandhya Arghya"},
+  {t:"Bhorewe Me Nadiya Nahaila",a:"Anuradha Paudwal",f:"Bhorewe Me Nadiya Nahaila.mp3",c:"Kharna"},
+  {t:"Kari Hum Nahaye Khaye",a:"Chhath Geet",f:"Kari Hum Nahaye Khaye.mp3",c:"Nahay Khay"},
+  {t:"Jode Jode Falwa",a:"Chhath Geet",f:"Jode Jode Falwa.mp3",c:"Sandhya Arghya"},
+  {t:"Uga ho Suraj",a:"Anuradha Paudwal",f:"Uga ho Suraj.mp3",c:"Sandhya Arghya"},
+  {t:"Argh Mora Lelihi",a:"DEVI",f:"Argh Mora Lelihi.mp3",c:"Sandhya Arghya"},
+  {t:"Devo Chhath Uga Hey Surujdev",a:"Kalpana Patowary",f:"Devo Chhath Uga Hey Surujdev.mp3",c:"Usha Arghya"},
+  {t:"JODE JODE NARIYAL",a:"DEVI",f:"JODE JODE NARIYAL.mp3",c:"Kharna"},
+  {t:"Chhathi Maiya Bulaye",a:"VISHAL MISHRA",f:"Chhathi Maiya Bulaye.mp3",c:"Kharna"},
+  {t:"Ug Ho Suruj Deva",a:"DEVI",f:"Ug Ho Suruj Deva.mp3",c:"Usha Arghya"},
+  {t:"Kosi Bharai Geet",a:"Devotional",f:"kosi bharai geet.mp3",c:"Kosi"},
+  {t:"Kosiya Bhraye Lagal(Bhojpuri)",a:"Devotional",f:"Kosiya Bhraye Lagal (Bhojpuri).mp3",c:"Kosi"},
+
+];
+const CATS = ["All","Favourites","Nahay Khay","Kharna","Sandhya Arghya","Usha Arghya"];
+
+const $ = id => document.getElementById(id);
+const au = $("au");
+let list = SONGS.map(s => ({...s})), cur = -1, cat = "All", favs = [];
+try { favs = JSON.parse(localStorage.getItem("chhathFavs2") || "[]"); } catch(e) { favs = []; }
+const saveFavs = () => { try { localStorage.setItem("chhathFavs2", JSON.stringify(favs)); } catch(e) {} };
+const fmt = s => { if (!isFinite(s)) return "0:00"; const m = Math.floor(s/60), x = Math.floor(s%60); return m + ":" + String(x).padStart(2,"0"); };
+
+function chips(){
+  const box = $("chips"); box.innerHTML = "";
+  CATS.forEach(c => {
+    const b = document.createElement("button");
+    b.className = "chip" + (c === cat ? " on" : "");
+    b.textContent = c;
+    b.onclick = () => { cat = c; chips(); render(); };
+    box.appendChild(b);
+  });
+  const l = document.createElement("label");
+  l.className = "chip add";
+  l.innerHTML = 'Add songs from device<input type="file" id="pick" accept="audio/*" multiple>';
+  box.appendChild(l);
+  $("pick").onchange = e => {
+    const fs = [...e.target.files]; if (!fs.length) return;
+    const first = list.length;
+    fs.forEach(f => list.push({t:f.name.replace(/\.[^.]+$/,"").replace(/[-_]+/g," "), a:"From your device", url:URL.createObjectURL(f), c:"Device"}));
+    cat = "All"; chips(); render(); play(first);
+  };
+}
+
+function row(i, n){
+  const s = list[i], playing = i === cur && !au.paused, fav = favs.includes(s.t);
+  const r = document.createElement("div");
+  r.className = "track" + (i === cur ? " on" : "") + (s.bad ? " bad" : "");
+  r.innerHTML = '<div class="num"></div><div><div class="t"></div><div class="meta"></div><span class="tag"></span></div>' +
+    '<div class="acts"><button class="ic fav" aria-label="Favourite"></button><button class="ic play" aria-label="Play"></button></div>';
+  r.querySelector(".num").textContent = String(n+1).padStart(2,"0");
+  r.querySelector(".t").textContent = s.t;
+  r.querySelector(".meta").textContent = s.a;
+  r.querySelector(".tag").textContent = s.c;
+  const fb = r.querySelector(".fav");
+  fb.textContent = fav ? "♥" : "♡"; fb.classList.toggle("on", fav);
+  fb.onclick = () => { favs = fav ? favs.filter(x => x !== s.t) : [...favs, s.t]; saveFavs(); render(); };
+  r.querySelector(".play").textContent = playing ? "❚❚" : (s.bad ? "✕" : "▶");
+  r.querySelector(".play").onclick = () => (i === cur && !s.bad) ? toggle() : play(i);
+  return r;
+}
+
+function render(){
+  const q = $("q").value.trim().toLowerCase();
+  const main = list.map((s,i) => i).filter(i => {
+    const s = list[i];
+    if (s.c === "Kosi") return false;
+    const okCat = cat === "All" || (cat === "Favourites" ? favs.includes(s.t) : s.c === cat);
+    return okCat && (s.t + " " + s.a).toLowerCase().includes(q);
+  });
+  $("count").textContent = main.length + " tracks";
+  const box = $("list"); box.innerHTML = "";
+  if (!main.length) box.innerHTML = '<div class="empty">No songs found.</div>';
+  main.forEach((i,n) => box.appendChild(row(i,n)));
+  const kb = $("kosiList"); kb.innerHTML = "";
+  list.map((s,i) => i).filter(i => list[i].c === "Kosi").forEach((i,n) => kb.appendChild(row(i,n)));
+}
+
+function play(i){
+  cur = i; const s = list[i]; s.bad = false;
+  $("pTitle").textContent = s.t; $("pSub").textContent = s.a;
+  $("pErr").textContent = "";
+  $("player").classList.add("show");
+  document.body.style.paddingBottom = "130px";
+  au.src = s.url || ("songs/" + encodeURIComponent(s.f));
+  au.play().catch(() => {});
+  render();
+}
+function toggle(){ if (au.paused) au.play().catch(() => {}); else au.pause(); }
+function step(d){ if (!list.length) return; play(cur < 0 ? 0 : (cur + d + list.length) % list.length); }
+function sync(){ $("pp").textContent = (!au.paused && !au.ended) ? "❚❚" : "▶"; }
+
+au.addEventListener("play", () => { sync(); render(); });
+au.addEventListener("pause", () => { sync(); render(); });
+au.addEventListener("loadedmetadata", () => { $("dur").textContent = fmt(au.duration); });
+au.addEventListener("timeupdate", () => {
+  $("cur").textContent = fmt(au.currentTime);
+  $("seek").value = au.duration ? au.currentTime / au.duration * 100 : 0;
+});
+au.addEventListener("ended", () => { if (cur < list.length - 1) step(1); else { sync(); render(); } });
+au.addEventListener("error", () => {
+  if (cur < 0) return;
+  const s = list[cur]; s.bad = true;
+  $("pErr").textContent = s.url ? "This file could not be played." : "File not found: songs/" + s.f + " (put your MP3 in the songs folder with this exact name).";
+  sync(); render();
+});
+
+$("seek").oninput = () => { if (au.duration) au.currentTime = $("seek").value / 100 * au.duration; };
+$("pp").onclick = toggle;
+$("next").onclick = () => step(1);
+$("prev").onclick = () => step(-1);
+$("pClose").onclick = () => { au.pause(); $("player").classList.remove("show"); document.body.style.paddingBottom = ""; };
+$("q").addEventListener("input", render);
+$("theme").onclick = () => {
+  const c = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.dataset.theme = c === "dark" ? "light" : "dark";
+};
+chips(); render();
+</script>
+</body>
+</html>
